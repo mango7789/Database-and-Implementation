@@ -1,4 +1,4 @@
 *.css linguist-vendored
 *.html linguist-vendored
 *.scss linguist-vendored
-*.javascript linguist-vendored
+*.js linguist-vendored
