@@ -33,7 +33,6 @@
 ├──backup\          # 存储用户上传的订单文件
 ├──static\          # 静态文件   
 ├──template\        # 所有html文件
-├──doc\             # 大赛相关的所有文档
 ├──manage.py        # 管理该项目的python文件
 ├──retail.sql       # 导入测试数据的sql脚本
 └──requirements.txt # 该项目依赖库文件
