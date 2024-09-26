@@ -2,8 +2,6 @@
 
 - 技术路径：基于`Django`框架开发，后端为`MySQL`
 - 项目对标：“进销存管理+人员管理+数据可视化分析”**一站式轻量级**数据库系统
-- 第十七届中国大学生计算机设计大赛一等奖
-
 
 ### 项目文件结构
 
@@ -81,5 +79,5 @@
 ### 小组成员
 
 - [mango7789](https://github.com/mango7789)
-- [Oxlord-Li](https://github.com/Oxlord-Lin)
-- [Julius-Wo](https://github.com/Julius-Woo)
+- [Oxlord-Lin](https://github.com/Oxlord-Lin)
+- [Julius-Woo](https://github.com/Julius-Woo)
