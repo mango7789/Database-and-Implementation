@@ -36,7 +36,6 @@
 ├──doc\             # 大赛相关的所有文档
 ├──manage.py        # 管理该项目的python文件
 ├──retail.sql       # 导入测试数据的sql脚本
-├──autosave.bat     # 自动备份数据库的脚本，适用Windows
 └──requirements.txt # 该项目依赖库文件
 ```
 
