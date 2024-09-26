@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>连锁商店管理系统</title>
+    <link rel="icon" sizes="192x192" href="../../src/img/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            width: 100%;
+            background: url('{% static "images/back.jpg" %}');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        body,
+        div,
+        h1,
+        form,
+        input,
+
+        p {
+            padding: 0;
+            margin: 0;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 16px;
+            color: #666;
+
+        }
+
+        h1 {
+            padding: 10px 0;
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            font-family: 'Microsoft YaHei', sans-serif;
+            color: steelblue;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        hr {
+            color: #a9a9a9;
+            opacity: 0.7;
+        }
+
+        .main-block {
+            max-width: 310px;
+            min-height: 350px;
+            padding: 10px 10px;
+            margin: auto;
+            border-radius: 10px;
+            border: solid 1px #ccc;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .31);
+            background: #ebebeb;
+            top: 20%;
+            position: absolute;
+        }
+
+        form {
+            margin: 0 30px;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        label#icon {
+            margin: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        label.radio {
+            position: relative;
+            display: inline-block;
+            padding-top: 4px;
+            margin-right: 20px;
+            text-indent: 30px;
+            overflow: visible;
+            cursor: pointer;
+        }
+
+        label.radio:before {
+            content: "";
+            position: absolute;
+            top: 2px;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: steelblue;
+        }
+
+        label.radio:after {
+            content: "";
+            position: absolute;
+            width: 9px;
+            height: 4px;
+            top: 8px;
+            left: 4px;
+            border: 3px solid #fff;
+            border-top: none;
+            border-right: none;
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+
+        input[type=radio]:checked+label:after {
+            opacity: 1;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: calc(100% - 57px);
+            height: 36px;
+            margin: 13px 0 0 -5px;
+            padding-left: 10px;
+            border-radius: 0 5px 5px 0;
+            border: solid 1px #cbc9c9;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            background: #fff;
+        }
+
+        input[type=vercode] {
+            width: calc(100% - 157px);
+            height: 36px;
+            margin: 13px 0 0 -5px;
+            padding-left: 10px;
+            border-radius: 0 5px 5px 0;
+            border: solid 1px #cbc9c9;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            background: #fff;
+        }
+
+        input[type=vercode] {
+            margin-bottom: 15px;
+        }
+
+        input::placeholder {
+            font-size: 14px;
+        }
+
+        #icon {
+            display: inline-block;
+            padding: 9.3px 15px;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, .09);
+            background: steelblue;
+            color: #fff;
+            text-align: center;
+        }
+
+        .btn-block {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 0;
+            margin: 10px auto;
+            border-radius: 5px;
+            border: none;
+            background: steelblue;
+            font-size: 14px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        button:hover {
+            background: #1c87c9;
+        }
+
+        .account-type {
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        .account-type input {
+            margin: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="main-block">
+        <h1>连锁商店管理系统</h1>
+        <form method="post">
+            {% csrf_token %}
+            <hr>
+            <div class="account-type">
+                <input type="radio" value="1" id="radioOne" name="type" {% if type == 1 %}checked{% endif %}/>
+                <label for="radioOne" class="radio">管理层</label>
+                <input type="radio" value="2" id="radioTwo" name="type" {% if type == 2 %}checked{% endif %}/>
+                <label for="radioTwo" class="radio">员工</label>
+            </div>
+            <hr>
+            <div style="text-align: center;">
+                &nbsp;
+            </div>
+            <label id="icon" for="name"><i class="fas fa-user"></i></label>
+            <input type="text" name="id" placeholder="ID" value={{ id }}>
+
+            <div style="margin-top: 5px;"></div>
+
+            <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
+            <input type="password" name="password" placeholder="密码" />
+
+            <div style="margin-top: 5px;"></div>
+
+            <label id="icon" for="name"><i class="fas fa-shield-alt" style="width: 14px;"></i></label>
+            <input type="vercode" name="vercode" placeholder="验证码" />    
+            <img src="{{ src }}" alt="Image" style="zoom: 0.6; position: relative; top: 22px;">
+
+
+            <div style="text-align: center;">
+                {% if error_msg %}
+                    <span style="color:red; display: inline; font-size: 13px;">{{ error_msg }}</span>
+                {% else %}
+                    &nbsp;
+                {% endif %}
+            </div>
+            <div class="btn-block" style="align-items: center;">
+                <hr>
+                <p>
+                    <a href="/">刷新页面 </a>
+                </p>
+                <button type="submit">登录</button>
+                <p>
+                    &nbsp;
+                    <!-- <a href="https://github.com/mango7789">联系我们/支持</a> -->
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

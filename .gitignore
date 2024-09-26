@@ -1,0 +1,5 @@
+# ignore all `.pyc` file and dirs with name migrations/__pycache__
+
+*.pyc
+**/migrations/
+**/__pycache__/

@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="/static/faq/css/style.css">
+	<!-- Font Awesome -->
+	<title>“卖多多”系统FAQ（管理层版）</title>
+</head>
+
+<body>
+	<header class="cd-header flex flex-column flex-center">
+		<div class="text-component text-center">
+			<h1>“卖多多”系统FAQ（管理层版）</h1>
+			<p>👈 <a class="cd-article-link" href="/homepage" style="color: orange;">回到主页</a></p>
+		</div>
+	</header>
+
+	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+		<ul class="cd-faq__categories">
+			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#login">登录</a></li>
+			<li><a class="cd-faq__category truncate" href="#homepage">主页可视化展板</a></li>
+			<li><a class="cd-faq__category truncate" href="#shop">商店模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#supplier">供应商模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#staff">员工模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#cost">进货单价模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#order">进货记录模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#sale">商品/销售模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#remain">库存模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#mailbox">收件箱</a></li>
+			<li><a class="cd-faq__category truncate" href="#thisfile">关于本文档</a></li>
+			<!-- <li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li> -->
+		</ul> <!-- cd-faq__categories -->
+
+		<div class="cd-faq__items">
+			<ul id="login" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>登录</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何登录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在登陆界面，输入账户、密码以及验证码即可登录。如果看不清验证码，请点击<a href="#">刷新页面</a>按钮。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="homepage" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>主页可视化展板</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看基本数据</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在管理层的主页，我们在最上方示了六项基本数据：商店总数、供应商总数、员工总数、商品总数、总销售额、总提醒数，点击对应数字，分别可以进入商店模块、供应商模块、员工模块、商品单价模块、销售记录模块、收件箱。
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>四种销售数据可视化</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>我们针对四种销售信息进行可视化，分别是
+							<ul>
+								<li>近三个月的盈亏数据分别展示了销售额和净利润，并标注了最大、最小值，以及平均值； </li>
+								<li> 销量前五名商店：列出了这五个商店的销售额和净利润；</li>
+								<!-- <li> 销量地区分布：可以通过调节下方的滑块调节颜色阈值，通过鼠标滚轮可以放大缩小，把鼠标放到对应地区可以查看对应地区的销售量；</li> -->
+								<li> 周一到周日的盈亏分析：统计近三个月内，周一到周日每一天的平均销售额、净利润、进货金额，可以反映顾客的消费行为；</li>
+								<li>不同种类商品销售额；</li>
+								<!-- <li>销售净利率：定义为净利润/销售额。</li> -->
+
+							</ul>
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="shop" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>商店模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>商店信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>商店信息</strong>二级模块，可以查看所有商店，修改商店的信息，以及查看负责经营商店的员工。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>表格功能</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在我们的系统中，所有的表格都提供复制、下载为csv、以及打印功能（在表格的左上方）；所有的表格都可以按照选定字段进行升序或者降序排序（通过点击表头的对应字段旁边的箭头）；所有的表格都可以进行全字段的检索（表格右上角的检索框）
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何添加新门店</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果公司新开了门店，则需要在<strong>添加门店</strong>二级模块里进行添加。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="supplier" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>供应商模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看和修改供应商</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>供应商信息</strong>二级模块，可以查看所有供应商的信息，同样也可以进行修改。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何添加新的供应商</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果有了新的的供应商伙伴，请在<strong>添加供应商</strong>二级模块里添加信息。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何正确录入进货信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>由于进货是一个三元关系，比如，从A公司进了B商品送到C商店，所以，只有在供应商和门店信息都已经输入数据库后，才能进行进货操作。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="staff" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>员工模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看和修改员工信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>员工信息</strong>二级模块，同样可以查看和修改所有员工的信息。如果解雇了某个员工，则可以将其删除</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何添加新员工的信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果新招聘了一位员工，则在<strong>添加员工</strong>二级模块中创建新员工信息。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="cost" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>进货单价模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看和修改进货单价</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>进货单价信息</strong>二级模块，我们可以看到各个供应商提供的商品的进货单价。请注意，同一种商品，由于供货商不同，可能有不同的单价。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>进货单价表上的箭头是什么意思</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>进货单价表中的小箭头表示的是进货单价处于上涨还是下降状态。</p>
+							<p>上涨状态定义为：当前进货单价和上一轮的进货单价相比更高；下降状态定义类似。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>商品进货单价的不同状态是什么含义</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>当商品的进货单价信息是通过真实的进货行为而自动计算而来，商品的状态就会显示为<span class="badge"
+									style="color: green">已进货</span>。如果商品的进货单价是通过手动添加或者手动修改而得到，则商品状态就会显示为<span
+									class="badge" style="color: orange">预订购</span>，表明尚未按照当前新的进货单价进行进货，仅做记录。
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何添加新商品的进货单价</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果和供应商商定了某种<strong>新商品</strong>的进货单价，但并不立刻进货。此时，需要在`添加预购单价`二级模块添加预订购信息。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何修改已有商品的进货单价</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果和供应商商定了某种<strong>已有商品</strong>的进货单价，但并不立刻进货。此时，需要在`进货单价信息`二级模块修改预订购信息。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="order" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>进货记录模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看进货记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>进货信息记录</strong>二级模块展示了所有进货记录。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何添加一条新的进货记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>手动添加进货记录</strong>二级模块中可以手动添加进货记录，一次只能添加一条。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何批量导入新的进货记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>批量导入进货记录</strong>二级模块，可以批量添加进货信息。点击左上角的<span class="badge"
+									style="color: green">下载订单模板</span>按钮，
+								下载模板，然后填写，上传，系统自动检查每一条数据是否正确。
+								设计这个功能的时候，我们把从检查到写入的整个批处理过程封装为一个事务。
+								如果检查后发现错误，那么即便表格中有其他正确的数据，也不能写入。
+								只有每一条数据都正确才能写入。如果检查无误，系统则会自动写入所有进货记录，并反馈写入数据的总数。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>关于自动添加新商品的进货记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在进货的时候，如果供应商或门店的信息没有录入系统，则无法进货。但如果只有商品的信息没有录入，系统则会自动计算进价，并录入系统，
+								然后自动更新<strong>库存表</strong>、<strong>销售单价表</strong>，并向<strong>收件箱</strong>中发送一条提醒信息。
+								其中，销售单价中自动添加的信息将取默认值——商品类别为食品，销售单价为进货单价的1.1倍，计量单位为“个”，商品状态为<span class="badge"
+									style="color: red">未确认</span>。
+								需要管理层手动修改相关信息后，商品状态才会变成<span class="badge" style="color: green">已确认</span>，正式开始销售。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="sale" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>商品/销售模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看和修改商品销售信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>商品单价信息</strong>二级模块，可以查看并修改各个商品的信息。</p>	
+								<p>请注意，商品状态分为<span class="badge" style="color: green">已确认</span>和<span class="badge"
+									style="color: red">未确认</span>，
+								当管理层修改了商品信息后，处于<span class="badge" style="color: red">未确认</span>状态的商品信息就会变为<span
+									class="badge" style="color: green">已确认</span>。
+								只有那些经过管理层确认后的商品，在员工界面才可以看得到，也才能够进行销售。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>商品销售单价表上的箭头是什么意思</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>小箭头表示当前的销售单价和历史上的平均进货单价相比，是太高还是太低。可以辅助管理层做出更好的决策。</p>
+							<p>太高指的是：当前销售单价高于历史平均进货单价的1.6倍，此时可能定价过高，易导致客户流失；太低指的是：当前销售单价低于历史平均进货单价。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看销售记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在<strong>销售记录信息</strong>二级模块，可以查看所有门店的销售记录。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="remain" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>库存模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看各个门店的库存</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>该模块记录了所有商店的库存信息。只要存量大于0的商品才会出现在库存表中。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="mailbox" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>收件箱</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>收件箱的原理与功能</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>收件箱从原理上看是一个触发器，当基本表发生重要变化时会自动触发;</p>
+							<p>从功能上看，触发器相当于系统的日志文件，对用户的重要操作进行存档。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>收件箱里有哪些内容</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>收件箱自动记录进货单价的变动情况、进货时新建的商品、商品销售信息变动等情况。默认按照时间顺序倒排，最新的消息置顶。
+							</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="thisfile" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>关于本文档</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如果您有任何宝贵建议</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果您发现本文档存在任何的讹误，或对本文档有任何的修改意见，欢迎您与开发者联系！谢谢！</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+		</div> <!-- cd-faq__items -->
+
+		<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+
+		<div class="cd-faq__overlay" aria-hidden="true"></div>
+	</section> <!-- cd-faq -->
+	<script src="/static/faq/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+	<script src="/static/faq/js/main.js"></script>
+</body>
+
+</html>

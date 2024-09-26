@@ -1,0 +1,4 @@
+Django==4.2.5
+django_pandas==0.6.6
+pandas==2.2.1
+mysqlclient==2.2.3

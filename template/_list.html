@@ -1,0 +1,165 @@
+{% extends "_layout.html" %}
+
+{% block title %}{% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<link href="/static/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+<link href="/static/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+<link href="/static/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+<link href="/static/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+<link href="/static/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                &nbsp;
+                <!-- <h3>Users <small>Some examples to get you started</small></h3> -->
+            </div>
+
+            <!-- <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="搜索...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                        </span>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>{{ list_name }}</h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a><i class="fa fa-star" style="color: white;"></i></a></li>
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <p class="text-muted font-13 m-b-30">
+                                        {{ text }}
+                                    </p>
+                                    <table id="datatable-buttons" class="table table-striped jambo_table bulk_action"
+                                        style="width: 100%;">
+                                        <!-- <a class="btn btn-default buttons-excel buttons-html5 btn-sm" tabindex="0" aria-controls="datatable-buttons" href="#"><span>Excel</span></a> -->
+                                        <thead>
+                                            <tr class="headings">
+                                                {% for name in table_header %}
+                                                <th>{{ name }}</th>
+                                                {% endfor %}
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for row in table_body %}
+                                            <tr style="color: gray; text-align: left;">
+                                                {% for col in row %}
+                                                <td>{{ col | safe }}</td>
+
+                                                {% endfor %}
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="top: 35%;">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document" style="width: 20%">
+        <div class="modal-content">
+            <div class="modal-header" style="text-align: center; margin-left: 3%;">
+                <b>连锁商店管理系统</b>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+                确认注销该员工？
+            </div>
+            <div class="modal-footer" style="text-align: center;">
+                <a href="#" id="confirmButton" class="btn btn-danger">注销</a>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var deleteLinks = document.querySelectorAll('.delete-link');
+        var confirmButton = document.getElementById('confirmButton');
+
+        deleteLinks.forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                confirmButton.href = link.href;
+                $('#confirmModal').modal('show');
+            });
+        });
+    });
+</script>
+{% endblock content %}
+
+{% block javascripts %}
+{{ block.super }}
+<!-- Datatables -->
+<script src="/static/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="/static/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="/static/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="/static/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="/static/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="/static/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="/static/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="/static/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="/static/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="/static/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="/static/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="/static/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="/static/vendors/jszip/dist/jszip.min.js"></script>
+<script src="/static/vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="/static/vendors/pdfmake/build/vfs_fonts.js"></script>
+<script>
+    function redirectTo(nid) {
+        var current_module = window.location.href.split('/')[3];
+        var sub_module = window.location.href.split('/')[5];
+        if (sub_module === "salesman") {
+            window.location.href = '/' + current_module + '/' + nid + '/salesman/modify';
+        }
+        else {
+            window.location.href = '/' + current_module + '/' + nid + '/' + 'modify';
+        }
+    }
+</script>
+<script>
+    function redirectToSub(nid) {
+        var current_module = window.location.href.split('/')[3];
+        window.location.href = '/' + current_module + '/' + nid + '/' + 'salesman';
+    }
+</script>
+
+{% endblock javascripts %}

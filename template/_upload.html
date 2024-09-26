@@ -1,0 +1,85 @@
+{% extends "_layout.html" %}
+
+{% block title %} {% endblock title %}
+
+{% block stylesheets %}
+{{ block.super }}
+<!-- Dropzone.js -->
+<link href="/static/vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
+{% endblock stylesheets %}
+
+{% block content %}
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <a class="btn btn-round btn-success" href="/order/download/1" style="margin-left: 2%;">
+          <i class='fa fa-download'></i>
+          下载订单模板
+        </a>
+      </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>批量导入进货记录</h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a><i class="fa fa-star" style="color: white;"></i></a></li>
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+
+                  <form method="post" class="form-horizontal form-label-left" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for field in form %}
+                    <div class="item form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ field.label }}
+                      </label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        {{ field }}
+                        <span style="color:red; font-size: 14px;">{{ field.errors.0 }}</span>
+                        <span style="color:orangered; font-size: 14px;">{{ process_result|safe }}</span>
+                      </div>
+                    </div>
+                    {% endfor %}
+                    <hr style="border: 1px solid lightgray;">
+                    <div class="form-group">
+                      <div class="col-md-6 col-md-offset-3">
+                        <button class="btn btn-round btn-warning" type="button" onclick="redirectTo()">返回</button>
+                        <button class="btn btn-round btn-primary" type="button" onclick="resetForm()">重置</button>
+                        <button id="send" type="submit" class="btn btn-round btn-success">提交</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+{{ block.super }}
+<!-- Dropzone.js -->
+<script src="/static/vendors/dropzone/dist/min/dropzone.min.js"></script>
+<script>
+  function resetForm() {
+    window.location.href = window.location.href;
+  }
+</script>
+<script>
+  function redirectTo() {
+    window.location.href = '/order/list'
+  }
+</script>
+{% endblock javascripts %}

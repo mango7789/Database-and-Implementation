@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="/static/faq/css/style.css">
+	<!-- Font Awesome -->
+	<title>“卖多多”系统FAQ（员工版）</title>
+</head>
+
+<body>
+	<header class="cd-header flex flex-column flex-center">
+		<div class="text-component text-center">
+			<h1>“卖多多”系统FAQ（员工版）</h1>
+			<p>👈 <a class="cd-article-link" href="/staff/shop/list" style="color: orange;">回到主页</a></p>
+		</div>
+	</header>
+
+	<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+		<ul class="cd-faq__categories">
+			<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#login">登录</a></li>
+			<!-- <li><a class="cd-faq__category truncate" href="#homepage">主页可视化展板</a></li> -->
+			<li><a class="cd-faq__category truncate" href="#shop">商店列表</a></li>
+			<!-- <li><a class="cd-faq__category truncate" href="#supplier">供应商模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#staff">员工模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#cost">进货单价模块</a></li>
+			<li><a class="cd-faq__category truncate" href="#order">进货记录模块</a></li> -->
+			<li><a class="cd-faq__category truncate" href="#sale">销售记录</a></li>
+			<li><a class="cd-faq__category truncate" href="#remain">商品库存</a></li>
+			<!-- <li><a class="cd-faq__category truncate" href="#mailbox">收件箱</a></li> -->
+			<li><a class="cd-faq__category truncate" href="#thisfile">关于本文档</a></li>
+			<!-- <li><a class="cd-faq__category truncate" href="#delivery">Delivery</a></li> -->
+		</ul> <!-- cd-faq__categories -->
+
+		<div class="cd-faq__items">
+			<ul id="login" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>登录</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#login"><span>如何登录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在登陆界面，输入账户、密码以及验证码即可登录。如果看不清验证码，请点击<a href="#">刷新页面</a>按钮。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="shop" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>商店列表</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>查看商店信息</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>在商店列表模块，可以看到所有门店的基本信息。右上角的搜索框可以进行全字段的信息搜索。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>实用搜索功能</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>右上角的搜索框还提供另一种功能。例如，输入商品A的商品名，会返回所有商品A的余量大于0的门店信息以及商品A的余量。</p>
+							<p>当某位顾客需要购买的商品恰巧当前门店无存货时，请使用此功能，引导顾客前往其他门店。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="sale" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>销售记录</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看商品销售记录</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>销售记录模块展示当前门店的所有销售记录。</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="remain" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>库存模块</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如何查看本门店的库存并售出商品</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>商品库存模块兼备销售功能。在该模块，可以查看当前门店所有余量大于零且经过管理层确认后的的商品的信息。 </p>
+							<p>点击对应商品的<strong>售出</strong>按钮，就可以进行销售。销售量必须为正整数且小于等于余量，否则无法通过检查。 </p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+			<ul id="thisfile" class="cd-faq__group">
+				<li class="cd-faq__title">
+					<h2>关于本文档</h2>
+				</li>
+				<li class="cd-faq__item">
+					<a class="cd-faq__trigger" href="#0"><span>如果您有任何宝贵建议</span></a>
+					<div class="cd-faq__content">
+						<div class="text-component">
+							<p>如果您发现本文档存在任何的讹误，或对本文档有任何的修改意见，欢迎您与开发者联系！谢谢！</p>
+						</div>
+					</div> <!-- cd-faq__content -->
+				</li>
+			</ul> <!-- cd-faq__group -->
+
+		</div> <!-- cd-faq__items -->
+
+		<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+		<div class="cd-faq__overlay" aria-hidden="true"></div>
+	</section> <!-- cd-faq -->
+	<script src="/static/faq/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
+	<script src="/static/faq/js/main.js"></script>
+</body>
+
+</html>

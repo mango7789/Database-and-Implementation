@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  {% block head %}
+  {% block meta %}
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% endblock meta %}
+
+  <title>卖多多{% block title %}{% endblock %}</title>
+
+  {% block stylesheets %}
+  <!-- Bootstrap -->
+  <link href="/static/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="/static/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- NProgress -->
+  <link href="/static/vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- bootstrap-daterangepicker -->
+  <link href="/static/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="/static/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+  <!-- bootstrap-progressbar -->
+  <link href="/static/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+  <!-- JQVMap -->
+  <link href="/static/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+  {% endblock stylesheets %}
+  <!-- Custom Theme Style -->
+  <link href="/static/build/css/custom.css" rel="stylesheet">
+  {% endblock head %}
+</head>
+
+<body class="{% block body_class %} nav-md {% endblock body_class %}">
+  {% block body %}
+  <div class="container body">
+    <div class="main_container">
+
+      {% block sidebar %}
+      <div class="col-md-3 left_col {% block sidebar_class %} {% endblock sidebar_class %}">
+        {% include "sidebar.html" %}
+      </div>
+      {% endblock sidebar %}
+
+      {% block top_navigation %}
+      <div class="top_nav">
+        {% include "top_navigation.html" %}
+      </div>
+      {% endblock top_navigation %}
+
+      {% block content %}
+      <!-- {{ content }} -->
+      {% endblock content %}
+
+      {% block footer %}
+      <footer>
+        {% include "footer.html" %}
+      </footer>
+      {% endblock footer %}
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" style="top: 35%;">
+    <div class="modal-dialog modal-dialog-centered modal-sm" role="document" style="width: 20%">
+      <div class="modal-content">
+        <div class="modal-header" style="text-align: center; margin-left: 3%;">
+          <b>连锁商店管理系统</b>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="text-align: center;">
+          确认退出？
+        </div>
+        <div class="modal-footer" style="text-align: center;">
+          <a href="{% url 'logout' %}" class="btn btn-danger"> &nbsp;是&nbsp; </a>
+          <button type="button" class="btn btn-primary" data-dismiss="modal"> &nbsp;否&nbsp; </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% block javascripts %}
+  <!-- jQuery -->
+  <script src="/static/vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="/static/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="/static/vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="/static/vendors/nprogress/nprogress.js"></script>
+  <!-- bootstrap-progressbar -->
+  <script src="/static/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+  <!-- iCheck -->
+  <script src="/static/vendors/iCheck/icheck.min.js"></script>
+  <!-- bootstrap-daterangepicker -->
+  <script src="/static/vendors/moment/min/moment.min.js"></script>
+  <script src="/static/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- bootstrap-wysiwyg -->
+  <script src="/static/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+  <script src="/static/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+  <script src="/static/vendors/google-code-prettify/src/prettify.js"></script>
+  <!-- jQuery Tags Input -->
+  <script src="/static/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+  <!-- Switchery -->
+  <script src="/static/vendors/switchery/dist/switchery.min.js"></script>
+  <!-- Select2 -->
+  <script src="/static/vendors/select2/dist/js/select2.full.min.js"></script>
+  <!-- Parsley -->
+  <script src="/static/vendors/parsleyjs/dist/parsley.min.js"></script>
+  <!-- Autosize -->
+  <script src="/static/vendors/autosize/dist/autosize.min.js"></script>
+  <!-- jQuery autocomplete -->
+  <script src="/static/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+  <!-- starrr -->
+  <script src="/static/vendors/starrr/dist/starrr.js"></script>
+  <!-- navbar block -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var currentPath = window.location.pathname;
+      // level 1 sidebars
+      var navLinks = document.querySelectorAll('div div div div div div ul li ul li a');
+      navLinks.forEach(function (link) {
+        var linkPath = link.getAttribute('href');
+        if (linkPath + '/' === currentPath
+          || (currentPath.split('/')[2] !== '0' && currentPath.split('/')[3] === 'salesman' && linkPath === "/shop/list" && currentPath.split('/')[4] !== 'modify')
+          || (currentPath.split('/')[4] === 'modify' && currentPath.split('/')[3] === 'salesman' && linkPath === "/shop/0/salesman")) {
+          // li
+          link = link.parentNode;
+          link.classList.add("current-page");
+          // ul
+          link = link.parentNode;
+          link.style.display = "block";
+          // li
+          link = link.parentNode;
+          link.classList.add("active");
+          return;
+        }
+      });
+      // level 2 sidebars
+      navLinks = document.querySelectorAll('div div div div div div ul li ul li ul li a');
+      navLinks.forEach(function (link) {
+        var linkPath = link.getAttribute('href');
+        if (linkPath + '/' === currentPath) {
+          // li
+          link = link.parentNode;
+          link.classList.add("sub_menu%20current-page");
+          // ul
+          link = link.parentNode;
+          link.style.display = "block";
+          // li
+          link = link.parentNode;
+          link.classList.add("active");
+          // ul
+          link = link.parentNode;
+          link.style.display = "block";
+          return;
+        }
+      });
+    });
+  </script>
+  <!-- logout confirmation -->
+  <script>
+    document.getElementById('logoutLink').addEventListener('click', function (event) {
+      event.preventDefault();
+      $('#myModal').modal('show');
+    });
+  </script>
+  {% endblock %}
+  <!-- Custom Theme Scripts -->
+  <script src="/static/build/js/custom.js"></script>
+  {% endblock body %}
+</body>
+
+</html>
